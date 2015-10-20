@@ -27,27 +27,41 @@
 </head>
 <body>
   <header>
-    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+  <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+    {{#if title}}
       <a href="{{website}}" class="pure-menu-heading">{{title}}</a>
-        <ul class="pure-menu-list">
+    {{/if}}
+    <ul class="pure-menu-list">
+          {{#if news.title}}
           <li class="pure-menu-item"><a href="#news" class="pure-menu-link">{{news.title}}</a></li>
+        {{/if}}
+          {{#if about.title}}
           <li class="pure-menu-item"><a href="#about" class="pure-menu-link">{{about.title}}</a></li>
+    {{/if}}
+          {{#if contact.title}}
           <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">{{contact.title}}</a></li>
+    {{/if}}
         </ul>
       </div>
   </header>
   <div class="splash-container">
     <div class="splash">
+      {{#if splash.head}}
       <h1 class="splash-head">{{splash.head}}</h1>
         <p class="splash-subhead">
         {{splash.subhead}}
         </p>
+      {{/if}}
     </div>
   </div>
 
+  {{#if news}}
   <div class="content-wrapper">
       <div class="content">
-        <h2 class="content-head is-center" id="news">{{news.title}}</h2>
+        {{#if news.title}}
+          <h2 class="content-head is-center" id="news">{{news.title}}</h2>
+        {{/if}}
+        {{#if news.posts}}
       <div class="information pure-g">
           {{#each news.posts}}
           <div class="pure-u-1 pure-u-md-1-2">
@@ -60,28 +74,42 @@
             </div><hr/>
           {{/each}}
         </div> <!-- end information -->
+        {{/if}}
       </div>
+      {{/if}}
+      {{#if about}}
     <div class="l-box-lrg pure-g about ribbon2">
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+      <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+        {{#if about.title}}
           <h2 class="content-head content-head-ribbon" id="about">{{about.title}}</h2>
+          {{/if}}
+        {{#if about.content}}
           <p>
             {{about.content}}
-          </p>
+            </p>
+        {{/if}}
       </div>
     </div>
+    {{/if}}
   <footer class="footer l-box">
-      <p>
+    {{#if contact}}
+    <p>
+    {{#if contact.title}}
       <span id="contact">{{contact.title}}
-      <a href="{{contact.facebook}}"><i class="fa fa-facebook-official fa-5"></i></a>
-      <a  href="mailto:{{contact.email}}"><i class="fa fa-envelope-o fa-5"></i></a></span>
+    {{/if}}
+        {{#if contact.facebook}}
+          <a href="{{contact.facebook}}"><i class="fa fa-facebook-official fa-5"></i></a>
+        {{/if}}
+        {{#if contact.email}}
+          <a  href="mailto:{{contact.email}}"><i class="fa fa-envelope-o fa-5"></i></a></span>
+        {{/if}}
       <br/>
         © 2014 Copyright {{title}}
-      </p>
+        </p>
+      {{/if}}
       </footer>
     </div>
-    <a href="//canner.io" class="ribbon-container" target="_blank">
-          <span class="ribbon">powered by Canner</span>
-        </a>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </body>
 </html>

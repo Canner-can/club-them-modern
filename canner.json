@@ -30,5 +30,60 @@
             "email": "club@mail.com",
             "facebook": "https://www.test.com"
         }
-    }   
+    },
+    "columns": {
+      "title": {
+        "~description": "您的社團名稱是？",
+        "~format": ""
+      },
+      "website": {
+        "~description": "預設的網站連結是？",
+        "~format": "link"
+      },
+      "splash": {
+        "~description": "社團的標語",
+        "head": { 
+          "~description": "怎麼用簡單幾個字描述您的社團？",
+          "~format": ""
+         },
+        "subhead": {
+          "~description": "怎麼用一句話描述您的社團？",
+          "~format": ""
+         }
+      },
+      "news": {
+      	"~description": "社團的最新消息",
+      	"posts": {
+      		"~description": "",
+      		"title": {
+      			"~description": "標題",
+            "~format": ""
+      		},
+      		"content": {
+      		 	"~description": "內文",
+            "~format": ""
+      		}
+      	}
+
+      },
+      "about": {
+        "~description": "社團的簡介",
+        "content": {
+          "~description": "如何描述您的社團？"
+         }
+      },
+      "contact": {
+        "~description": "社團聯絡資訊",
+        "email": {
+          "~description": "您社團的email？",
+          "~format": "user.profile.email"
+         },
+        "facebook": {
+          "~description": "您社團的facebook？",
+          "~format": "link"
+        }
+      }
+    },
+	"seq": ["title", "website", "splash", "about", "contact", "news"]
+    
 }
